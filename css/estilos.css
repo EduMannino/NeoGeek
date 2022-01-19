@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #151320;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    place-items: center center;
+    align-items: stretch;
+    align-content: stretch;
+}
+/*-------------HEADER Y NAV BAR------------------*/
+
+header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.nav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0px 20px;
+    background-color: #000;
+}
+
+.logo{
+    font-size: 75px;
+    font-weight: 100;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.bar-btn{
+    font-size: 25px;
+    color: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+
+.menu{
+    display: block;
+    text-decoration: none;
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background: rgba(0, 0, 0, .95);
+    text-align: center;
+    transition: all .5s;
+}
+
+.menu li{
+    margin: 50px 0;
+    display: none;
+    line-height: 30px;
+    transition: all .5s;
+
+}
+
+.menu li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.menu li a:hover{
+    padding: 5px 10px;
+    background: #fff;
+    color: #000;
+    border-radius: 15px;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ .menu{
+    height: 100vh;
+}
+
+#check:checked ~ .menu li{
+    display: block;
+}
+
+/*-----------------FIN HEADER Y NAV BAR-------------------*/
+
+
+
+/*grid*/
+
+.container{  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 6px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "banner banner banner banner banner banner banner banner"
+      ". NOTICIA1 NOTICIA1 NOTICIA1 NOTICIA2 NOTICIA2 NOTICIA2 ."
+      ". NOTICIA1 NOTICIA1 NOTICIA1 NOTICIA2 NOTICIA2 NOTICIA2 ."
+      ". NOTICIA1 NOTICIA1 NOTICIA1 NOTICIA2 NOTICIA2 NOTICIA2 ."
+      ". NOTICIA3 NOTICIA3 NOTICIA3 PRODUCTO1 PRODUCTO1 PRODUCTO1 ."
+      ". NOTICIA3 NOTICIA3 NOTICIA3 PRODUCTO1 PRODUCTO1 PRODUCTO1 ."
+      ". NOTICIA3 NOTICIA3 NOTICIA3 PRODUCTO1 PRODUCTO1 PRODUCTO1 ."
+      "footer footer footer footer footer footer footer footer";
+}
+  
+/*-----BANNER-----*/
+
+.banner-text{
+    padding: 0 30px;
+    margin-top: 150px;
+    text-align: center;
+    color: #fff;
+}
+
+.banner-text h1{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.banner-text h2{
+    margin-bottom: 10px;
+}
+
+.banner-text span{
+    color: rgb(248, 8, 8)
+}
+  
+/*------FIN BANNER----*/
+
+.NOTICIA1 {
+    grid-area: NOTICIA1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+  
+.NOTICIA2 {
+    grid-area: NOTICIA2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*width: 100%;*/
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+  
+.NOTICIA3 {
+    grid-area: NOTICIA3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+  
+.PRODUCTO1 {
+    grid-area: PRODUCTO1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    overflow: hidden;
+}
+  
+.footer {
+    grid-area: footer;
+    padding: 15px 0;
+    background-color: #fff;
+    margin-top: 2em;
+}
+
+/*------FOOTER------*/
+
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: #4b4c4d;
+}
+
+.footer .social a{
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+
+.footer .social a:hover{
+    opacity: 0.9;
+}
+
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/*FIN FOOTER*/
+
+
+/*TARJETAS*/
+
+.container{
+    width: 330px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.container .tarjeta{
+    width: 300px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 100px;
+    transition: all 0.25s;
+}
+
+.container .tarjeta:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container .tarjeta img{
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+.container .tarjeta h4{
+    font-weight: 600;
+    color: #fff;
+}
+
+.container .tarjeta p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+}
+  
+/*-----FIN TARJETAS-----*/
+
+
+
+/*------NAVEGACION RESPONSIVE-----*/
+@media screen and (min-width: 1024px){
+    .logo{
+        margin-right: 50px;
+    }
+
+    .nav{
+        height: 100px;
+    }
+
+    .bar-btn{
+        display: none;
+    }
+
+    .menu{
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        text-align: right;
+        margin-right: 50px;
+    }
+
+    .menu li{
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .menu li a{
+        font-size: 12px;
+    }
+
+
+}
