@@ -8,12 +8,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #151320;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    place-items: center center;
-    align-items: stretch;
-    align-content: stretch;
+    display: grid;
 }
 /*-------------HEADER Y NAV BAR------------------*/
 
@@ -25,6 +20,13 @@ header{
     right: 0;
     z-index: 100;
 }
+
+main{
+    display: grid;
+    grid-row: 1 / span 7;
+    grid-column: 1 / span 3;
+}
+
 
 .nav{
     height: 100%;
@@ -111,7 +113,7 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 6px 10px;
+    gap: 2px 10px;
     grid-auto-flow: row;
     grid-template-areas:
       "banner banner banner banner banner banner banner banner"
@@ -131,6 +133,8 @@ header{
     margin-top: 150px;
     text-align: center;
     color: #fff;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .banner-text h1{
@@ -150,52 +154,39 @@ header{
 
 .NOTICIA1 {
     grid-area: NOTICIA1;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+    grid-row: 1 / 3;
+    grid-column: 1 / span 2;
 }
   
 .NOTICIA2 {
     grid-area: NOTICIA2;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /*width: 100%;*/
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
+    grid-row: 1 / 3;
+    grid-column: 3 / span 4;
 }
   
 .NOTICIA3 {
     grid-area: NOTICIA3;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /*width: 100%;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-}
+    grid-row:  2 / 3;
+    grid-column: 1 / span 2;
+} 
   
 .PRODUCTO1 {
     grid-area: PRODUCTO1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items:stretch;
-    overflow: hidden;
+    grid-row: 2 / 3;
+    grid-column: 4 / span 1;
 }
-  
+/*------FOOTER------*/
 .footer {
     grid-area: footer;
     padding: 15px 0;
     background-color: #fff;
-    margin-top: 2em;
+    grid-row: 8 / 8;
+    grid-column: 1 / 8;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-/*------FOOTER------*/
 
 .footer .social{
     text-align: center;
@@ -228,7 +219,7 @@ header{
     color: #aaa;
 }
 
-/*FIN FOOTER*/
+/**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-FIN FOOTER*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 
 
 /*TARJETAS*/
@@ -238,8 +229,9 @@ header{
     max-width: 1200px;
     margin: auto;
     padding: 40px 0;
-    display:flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
 }
 
 .container .tarjeta{
@@ -267,7 +259,7 @@ header{
 }
 
 .container .tarjeta h4{
-    font-weight: 600;
+    font-weight: 800;
     color: #fff;
 }
 
@@ -280,6 +272,81 @@ header{
   
 /*-----FIN TARJETAS-----*/
 
+
+
+/*----------GRID APARTADO NOSOTROS--------*/
+
+.contenedorNoticias {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "TITULO TITULO TITULO TITULO TITULO TITULO TITULO TITULO"
+      "IMAGEN IMAGEN IMAGEN IMAGEN DESCRIPCION DESCRIPCION DESCRIPCION DESCRIPCION"
+      "IMAGEN IMAGEN IMAGEN IMAGEN DESCRIPCION DESCRIPCION DESCRIPCION DESCRIPCION"
+      "IMAGEN IMAGEN IMAGEN IMAGEN DESCRIPCION DESCRIPCION DESCRIPCION DESCRIPCION"
+      "IMAGEN IMAGEN IMAGEN IMAGEN IMAGEN2 IMAGEN2 IMAGEN2 IMAGEN2"
+      "DESCRIPCION2 DESCRIPCION2 DESCRIPCION2 DESCRIPCION2 IMAGEN2 IMAGEN2 IMAGEN2 IMAGEN2"
+      "DESCRIPCION2 DESCRIPCION2 DESCRIPCION2 DESCRIPCION2 IMAGEN2 IMAGEN2 IMAGEN2 IMAGEN2"
+      "footer footer footer footer footer footer footer footer";
+  }
+  
+  
+  .TITULO {
+      grid-area: TITULO;
+      grid-column:4 / span 8 ;
+      grid-row: 4 / 1 ;
+      color:#fff;
+      margin-top: 120px;
+    
+    }
+  
+  .IMAGEN {
+      grid-area: IMAGEN;
+      grid-column: 1/ 4;
+      grid-row: 2 / 4;
+    }
+
+    .IMAGEN img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 20px;
+        
+    }
+  
+  .DESCRIPCION {
+      grid-area: DESCRIPCION;
+      grid-row: 2/ 6;
+      grid-column: 5/ 8;
+      font-size: 20px;
+      color: #fff;    
+      text-align: center;  
+      margin-top: 30px;   
+}
+  
+  .IMAGEN2 {
+      grid-area: IMAGEN2;
+      grid-column: 5/8;
+}
+
+   .IMAGEN2 {
+    height: 100%;
+    width: 100%;
+    margin-left: 30px;
+}
+  
+  .DESCRIPCION2 {
+      grid-area: DESCRIPCION2;
+      grid-row: 5/5;
+      color: #fff;
+      text-align: center;
+      font-size: 20px;
+    }
+
+/*-----------FIN GRID NOSOTROS------*/
 
 
 /*------NAVEGACION RESPONSIVE-----*/
@@ -315,6 +382,115 @@ header{
     .menu li a{
         font-size: 12px;
     }
-
-
 }
+
+
+/*-------MEDIA RESPONSIVE MOBILE------*/
+
+@media (max-width: 900px){
+    .container {  display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "banner banner banner banner banner banner banner banner"
+          "PRODUCTO1 PRODUCTO1 NOTICIA1 NOTICIA1 NOTICIA1 NOTICIA1 . ."
+          "PRODUCTO1 PRODUCTO1 NOTICIA1 NOTICIA1 NOTICIA1 NOTICIA1 . ."
+          "PRODUCTO1 PRODUCTO1 NOTICIA2 NOTICIA2 NOTICIA2 NOTICIA2 . ."
+          ". . NOTICIA2 NOTICIA2 NOTICIA2 NOTICIA2 . ."
+          ". . NOTICIA3 NOTICIA3 NOTICIA3 NOTICIA3 . ."
+          ". . NOTICIA3 NOTICIA3 NOTICIA3 NOTICIA3 . ."
+          "footer footer footer footer footer footer footer footer";
+      }
+      
+      
+      
+      .NOTICIA1 {
+          grid-area: NOTICIA1;
+          grid-row: 1/ 3;
+          grid-column: 1/ 4;
+      }
+      
+      .NOTICIA2 {
+          grid-area: NOTICIA2;
+          grid-row: 2/ 3;
+          grid-column: 2/ 1;
+      }
+      
+      .NOTICIA3 {
+          grid-area: NOTICIA3;
+          grid-row: 3;
+          grid-column: 1;
+    }
+      
+      .PRODUCTO1 {
+          grid-area: PRODUCTO1;
+          grid-row: 4/ span 8;
+          grid-column: 1 / 7;
+    }
+       
+       .footer {
+           grid-area: footer;
+           grid-row: 8 / span 8;
+           grid-column: 1 / 8;
+
+        }
+}
+
+/*-------------- RESPONSIVE NOSOTROS-------*/
+
+@media (max-width: 900px){
+    .contenedorNoticias {  display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1.1fr 0.9fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "TITULO TITULO TITULO TITULO TITULO TITULO TITULO TITULO"
+          ". . IMAGEN IMAGEN IMAGEN IMAGEN . ."
+          ". . IMAGEN IMAGEN IMAGEN IMAGEN . ."
+          ". . DESCRIPCION DESCRIPCION DESCRIPCION DESCRIPCION . ."
+          ". . IMAGEN2 IMAGEN2 IMAGEN2 IMAGEN2 . ."
+          ". . IMAGEN2 IMAGEN2 IMAGEN2 IMAGEN2 . ."
+          ". . DESCRIPCION2 DESCRIPCION2 DESCRIPCION2 DESCRIPCION2 . ."
+          "footer footer footer footer footer footer footer footer";
+      }
+      
+      
+      .TITULO { grid-area: TITULO; }
+      
+      .IMAGEN {
+          grid-area: IMAGEN;
+          grid-row: 2 / 4;
+          grid-column: 3 / 6;
+          /*height: fit-content;*/
+          height: 350px;
+          width: 500px;
+    }
+      
+      .DESCRIPCION {
+          grid-area: DESCRIPCION;
+          grid-column: 3 / 6;
+          grid-row: 4/ 5;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+      
+      .IMAGEN2 {
+          grid-area: IMAGEN2;
+          margin-top: 30px;
+          grid-column: 3 / 6;
+    }
+      
+      .DESCRIPCION2 {
+          grid-area: DESCRIPCION2;
+          text-align: center;
+          grid-column: 3 / 7;
+          margin-top: 20px;
+    }
+      
+}
+
+
+/*-------------FIN RESPONSIVE NOSOTROS-----------*/
